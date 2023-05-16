@@ -1,0 +1,30 @@
+﻿@helper LinkButton(string url, string id, string color, string css, string icon, string text)
+{
+    <a href="@url" id="@id" name="@id" class="btn btn-@color @css"><span class="glyphicon glyphicon-@icon"></span>@text</a>
+}
+
+@helper Button(string typ, string id, string color, string css, string icon, string text)
+{
+    <button type="@typ" id="@id" name="@id" class="btn btn-@color @css"><span class="glyphicon glyphicon-@icon"></span>@text</button>
+}
+
+@helper ModalPopup(string id,string title)
+{
+    <div class="modal fade" tabindex="-1" role="dialog" id="@id" name="@id">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header" id="@(id+"_header")">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">@title</h4>
+                </div>
+                <div class="modal-body" id="@(id+"_body")">
+                  
+
+                </div>
+                <div class="modal-footer" id="@(id+"_footer")">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Kapat</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+}

@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewBag.Title = "Geçersiz İşlem";
+}
+
+<link href="~/Content/login.css" rel="stylesheet" />
+
+<section class="login-info">
+    <div class="container">
+        <div class="row main">
+            <div class="form-header">
+                <h1 class="text-center">Yönlendiriliyorsunuz... </h1>
+            </div>   
+            <div class="main-content">
+                <div class="text-danger">
+                    <h2><span class="glyphicon glyphicon-remove"></span>Geçersiz işlem</h2>
+                    <br />
+                    <p class="text-justify">
+                        @foreach (string item in (List<string>)ViewBag.hatalar)
+                        {
+                            @item
+                             <br/>
+                        }
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    setTimeout(function () {
+        window.location = "/Home/Index"
+    }, 5000);
+
+</script>
+
+

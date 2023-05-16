@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Makale</title>
+
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/shop-homepage.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-3.6.4.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+
+    @{
+        Kullanici kul = null;
+
+        if(Session["login"]!=null)
+        {
+            kul = Session["login"] as Kullanici;
+        }
+
+    }
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/Home/Index">Makale Web</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    @if (kul != null)
+                    {
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-wrench"></span> Yönetim <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/Makale/Create">Makale Ekle</a></li>
+                                <li><a href="/Makale/Index">Makalelerim</a></li>
+                                <li><a href="/Home/Begendiklerim">Beğendiklerim</a></li>
+
+                                @if (kul.Admin)
+                                {
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="/Kategori/Create">Kategori Ekle</a></li>
+                                    <li><a href="/Kategori/Index">Kategoriler</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="/Kullanici/Create">Kullanici Ekle</a></li>
+                                    <li><a href="/Kullanici/Index">Kullanicilar</a></li>
+                                }
+
+                            </ul>
+                        </li>
+
+                    }
+
+                    <li>
+                        <a href="/Home/EnBegenilenler"><span class="glyphicon glyphicon-heart"></span> En Beğenilenler</a>
+                    </li>
+                    <li>
+                        <a href="/Home/SonYazilanlar"><span class="glyphicon glyphicon-list"></span> Son Yazılanlar</a>
+                    </li>
+                    <li>
+                        <a href="/Home/Hakkımızda"><span class="glyphicon glyphicon-info-sign"></span> Hakkımızda</a>
+                    </li>
+                    @*<li>
+            <a href="#"><span class="glyphicon glyphicon-phone"></span> İletişim</a>
+        </li>*@
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+
+                    @if(kul==null)
+                    {
+                    <li><a href="/Home/Giris"><span class="glyphicon glyphicon-log-in"></span> Giriş</a></li>
+                    <li><a href="/Home/KayitOl"><span class="glyphicon glyphicon-user"></span> Kayıt Ol</a></li>
+                    }
+                    else
+                    {
+                    <li><a href="/Home/ProfilGoster"><span class="glyphicon glyphicon-user"></span> @kul.KullaniciAdi</a></li>
+                    <li><a href="/Home/Cikis"><span class="glyphicon glyphicon-log-out"></span> Çıkış</a></li>
+                    }
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    @RenderBody()
+
+    @RenderSection("footer",false)  
+
+</body>
+
+</html>

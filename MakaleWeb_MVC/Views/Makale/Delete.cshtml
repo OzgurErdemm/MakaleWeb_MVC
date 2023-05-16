@@ -1,0 +1,91 @@
+﻿@model MakaleEntities.Makale
+
+@{
+    ViewBag.Title = "Delete";
+}
+<div class="row">
+    <div class="col-md-10 col-md-offset-1">
+        <h3>Bu makaleyi silmek istediğinizden emin misiniz?</h3>
+        <hr />
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-10 col-md-offset-1">
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Kategori.Baslik)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Kategori.Baslik)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Baslik)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Baslik)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Icerik)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Icerik)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Taslak)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Taslak)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.BegeniSayisi)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.BegeniSayisi)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.KayitTarihi)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.KayitTarihi)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.DegistirmeTarihi)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DegistirmeTarihi)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.DegistirenKullanici)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DegistirenKullanici)
+            </dd>
+
+        </dl>
+    </div>
+    <div class="col-md-8 col-md-offset-2">
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-danger" /> 
+            @Html.ActionLink("Listeye dön", "Index", null, new { @class = "btn btn-warning" })
+        </div>
+        }
+    </div>
+    </div>

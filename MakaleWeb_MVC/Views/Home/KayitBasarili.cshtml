@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewBag.Title = "KayitBasarili";
+}
+
+<link href="~/Content/login.css" rel="stylesheet" />
+
+<section class="login-info">
+    <div class="container">
+        <div class="row main">
+            <div class="form-header">
+                <h1 class="text-center ">Yönlendiriliyorsunuz... </h1>
+            </div>
+            <div class="main-content">
+                <div class="text-success">
+                    <h2>Kayıt Başarılı</h2>
+                    <p class="text-justify">
+                        Lütfen e-posta adresine gönderilen aktivasyon linkine tıklayarak hesabınızı aktifleştiriniz.
+                        Hesabınızı aktifleştirmeden makale ve yorum yazamazsınız ve beğeni yapamazsınız.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    setTimeout(function () {
+        window.location="/Home/Index"
+    },5000);
+
+</script>

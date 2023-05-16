@@ -1,0 +1,34 @@
+﻿
+@{
+    ViewBag.Title = "Hesap Aktiflestirildi";
+}
+
+<link href="~/Content/login.css" rel="stylesheet" />
+
+<section class="login-info">
+    <div class="container">
+        <div class="row main">
+            <div class="form-header">
+                <h1 class="text-center">Yönlendiriliyorsunuz... </h1>
+            </div>
+            <div class="main-content">
+                <div class="text-success">
+                    <h2><span class="glyphicon glyphicon-ok-circle"></span>Hesap Aktifleştirildi</h2>
+                    <p class="text-justify">                      
+                        Hesabınız aktifleştirildi.Artık makale ve yorum yazabilirsiniz ve beğeni yapabilirsiniz.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    setTimeout(function () {
+        window.location = "/Home/Index"
+    }, 5000);
+
+</script>
+
+

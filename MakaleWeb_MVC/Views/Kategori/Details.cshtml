@@ -1,0 +1,67 @@
+﻿@model MakaleEntities.Kategori
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="row">
+    <div class="col-md-10 col-md-offset-1">
+        <h2>Kategori Detay</h2>
+        <hr />
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-10 col-md-offset-1">
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Baslik)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Baslik)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Aciklama)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Aciklama)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.KayitTarihi)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.KayitTarihi)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.DegistirmeTarihi)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DegistirmeTarihi)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.DegistirenKullanici)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DegistirenKullanici)
+            </dd>
+
+        </dl>
+
+    </div>
+    <div class="col-md-8 col-md-offset-2">
+        <p>
+            @Html.ActionLink("Düzenle", "Edit", new { id = Model.Id }, new { @class = "btn btn-success" })
+            @Html.ActionLink("Listeye dön", "Index", null, new { @class = "btn btn-warning" })
+        </p>
+    </div>
+    </div>
+
